@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-@Client.on_message(filters.command("") & filters.text)
+@Client.on_message(filters.command("r") & filters.text)
 async def pm_text(client: Client, message):
     try:
         if message.from_user.id == ADMIN:
