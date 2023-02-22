@@ -1,5 +1,5 @@
 import os
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, User, ChatJoinRequest
 from myscript import script
 
@@ -29,7 +29,7 @@ async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_message(chat_id=chat.id, text=TEXT.format(mention=user.mention, title=chat.title),
         reply_markup=reply_markup,
-        parse_mode='html'
+        parse_mode=enums.ParseMode.HTML
     )
         print("Welcome....")
 
